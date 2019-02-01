@@ -4,10 +4,12 @@ services:
     build: 
       context: ./django
       dockerfile: Dockerfile
-    command: bash -c "tail -f /dev/null"
+    command: bash -c "python3 /code/simssadb/manage.py runserver 0.0.0.0:8000"
     env_file: ./misc/variables.txt
     ports: 
       - "8000:8000"
+    volumes:
+      - solr_index:/solr_index
   postgres:
     build:
       context: ./postgres
@@ -18,3 +20,11 @@ services:
       context: ./solr
       dockerfile: Dockerfile
     env_file: ./misc/variables.txt
+    command: bash -c "/scripts/start.sh"
+    ports:
+      - "8983:8983"
+    volumes:
+      - solr_index:/solr_index
+
+volumes:
+  solr_index:
