@@ -1,0 +1,24 @@
+# Django app (simmsadb) variables
+# The app is reading those with os.getenv()
+
+# Django settings
+SIMSSADB_HOSTS=*
+SIMSSADB_DEBUG=True
+SIMSSADB_SECRET_KEY=f1(1=m5ze=@ne023nnabwz(%x^j+8!y+py&n#lwvo0&(#c
+
+# postgres settings
+POSTGRES_DB=simssadb
+SIMSSADB_DB_HOST=postgres
+SIMSSADB_DB_PORT=5432
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=debug
+
+# email settings
+SIMSSADB_EMAIL_HOST=smtp.gmail.com
+SIMSSADB_EMAIL_HOST_USER=@gmail.com
+SIMSSADB_EMAIL_HOST_PASSWORD=PASSWORD
+SIMSSADB_EMAIL_PORT=587
+
+# haystack settings (solr)
+SIMSSADB_HAYSTACK_ADMIN_URL=http://127.0.0.1:8983/solr/
+SIMSSADB_HAYSTACK_URL=http://127.0.0.1:8983/solr/simssadb
