@@ -5,3 +5,6 @@ services:
       context: ./django
       dockerfile: Dockerfile
     command: bash -c "tail -f /dev/null"
+    env_file: ./misc/variables.txt
+    ports: 
+      - "8000:8000"
