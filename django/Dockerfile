@@ -16,6 +16,3 @@ COPY simssadb /code/simssadb
 
 # Install python dependencies with pip
 RUN pip3 install -r /code/simssadb/requirements.txt
-
-
-
