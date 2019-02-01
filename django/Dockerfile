@@ -1,5 +1,6 @@
 # Get OS image
 FROM ubuntu
+EXPOSE 8000
 
 # Update dependencies
 RUN apt-get update -y \
