@@ -13,3 +13,8 @@ services:
       context: ./postgres
       dockerfile: Dockerfile
     env_file: ./misc/variables.txt
+  solr:
+    build:
+      context: ./solr
+      dockerfile: Dockerfile
+    env_file: ./misc/variables.txt
