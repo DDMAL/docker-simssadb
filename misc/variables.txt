@@ -19,6 +19,5 @@ SIMSSADB_EMAIL_HOST_USER=@gmail.com
 SIMSSADB_EMAIL_HOST_PASSWORD=PASSWORD
 SIMSSADB_EMAIL_PORT=587
 
-# haystack settings (solr)
-SIMSSADB_HAYSTACK_ADMIN_URL=http://solr:8983/solr/
-SIMSSADB_HAYSTACK_URL=http://solr:8983/solr/simssadb
+# haystack settings
+SIMSSADB_HAYSTACK_URL=http://elasticsearch:9200/
