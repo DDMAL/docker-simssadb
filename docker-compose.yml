@@ -8,8 +8,6 @@ services:
     env_file: ./misc/variables.txt
     ports: 
       - "8000:8000"
-    volumes:
-      - solr_index:/solr_index
   postgres:
     build:
       context: ./postgres
@@ -23,8 +21,3 @@ services:
     command: bash -c "/scripts/start.sh"
     ports:
       - "8983:8983"
-    volumes:
-      - solr_index:/solr_index
-
-volumes:
-  solr_index:
