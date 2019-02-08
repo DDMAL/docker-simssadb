@@ -13,11 +13,12 @@ services:
       context: ./postgres
       dockerfile: Dockerfile
     env_file: ./misc/variables.txt
-  solr:
+  elasticsearch:
     build:
-      context: ./solr
+      context: ./elasticsearch
       dockerfile: Dockerfile
     env_file: ./misc/variables.txt
     command: bash -c "/scripts/start.sh"
     ports:
-      - "8983:8983"
+      - "9200:9200"
+      - "9300:9300"
