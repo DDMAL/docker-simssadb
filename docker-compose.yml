@@ -17,8 +17,6 @@ services:
     build:
       context: ./elasticsearch
       dockerfile: Dockerfile
-    env_file: ./misc/variables.txt
-    command: bash -c "/scripts/start.sh"
     ports:
       - "9200:9200"
       - "9300:9300"
