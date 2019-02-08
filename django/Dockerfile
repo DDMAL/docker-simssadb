@@ -1,5 +1,5 @@
-# Get OS image
-FROM ubuntu
+# Get python image
+FROM python:3.6
 EXPOSE 8000
 
 # Update dependencies
