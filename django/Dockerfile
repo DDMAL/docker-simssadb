@@ -5,7 +5,7 @@ EXPOSE 8000
 # Update dependencies
 RUN apt-get update -y \
   # Making the image smaller
-  # && rm -rf /var/lib/apt/lists/* 
+  && rm -rf /var/lib/apt/lists/* 
 # Make a /code directory
 RUN mkdir /code
 # Copy our code from simssadb directory into the new code directory
