@@ -4,9 +4,6 @@ EXPOSE 8000
 
 # Update dependencies
 RUN apt-get update -y \
-  && apt-get install -yq \
-    python3 \
-    python3-pip
   # Making the image smaller
   # && rm -rf /var/lib/apt/lists/* 
 # Make a /code directory
