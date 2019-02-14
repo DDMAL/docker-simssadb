@@ -19,4 +19,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - "9200:9200"
-      - "9300:9300"
+      - "9300:9300"  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    volumes:
+      - static_volume:/usr/src/app/static
+    ports:
+      - "1337:80"
+    depends_on:
+      - django
