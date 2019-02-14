@@ -8,6 +8,11 @@ services:
     env_file: ./misc/variables.txt
     ports: 
       - "8000:8000"
+    expose: 
+      - "8000"
+    depends_on:
+      - postgres
+      - elasticsearch
     volumes:
       - static_volume:/code/simssadb/static
   postgres:
@@ -34,6 +39,7 @@ services:
       - "1337:80"
     depends_on:
       - django
+
 volumes:
   postgres_data:
   static_volume:
