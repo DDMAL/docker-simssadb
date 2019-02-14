@@ -10,7 +10,10 @@ RUN apt-get update -y \
 RUN mkdir /code
 # Copy our code from simssadb directory into the new code directory
 COPY simssadb /code/simssadb
+COPY entrypoint.sh /code/simssadb/entrypoint.sh
 WORKDIR /code/simssadb
 
 # Install python dependencies with pip
 RUN pip3 install -r /code/simssadb/requirements.txt
+
+ENTRYPOINT ["/code/simssadb/entrypoint.sh"]
