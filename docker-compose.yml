@@ -8,18 +8,23 @@ services:
     env_file: ./misc/variables.txt
     ports: 
       - "8000:8000"
+    volumes:
+      - static_volume:/code/simssadb/static
   postgres:
     build:
       context: ./postgres
       dockerfile: Dockerfile
     env_file: ./misc/variables.txt
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
   elasticsearch:
     build:
       context: ./elasticsearch
       dockerfile: Dockerfile
     ports:
       - "9200:9200"
-      - "9300:9300"  nginx:
+      - "9300:9300"
+  nginx:
     build:
       context: ./nginx
       dockerfile: Dockerfile
@@ -29,3 +34,6 @@ services:
       - "1337:80"
     depends_on:
       - django
+volumes:
+  postgres_data:
+  static_volume:
