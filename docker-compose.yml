@@ -21,9 +21,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
   elasticsearch:
-    build:
-      context: ./elasticsearch
-      dockerfile: Dockerfile
+    image: "elasticsearch:5"
     ports:
       - "9200:9200"
       - "9300:9300"
