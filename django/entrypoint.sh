@@ -7,5 +7,5 @@ python manage.py collectstatic --no-input
 cd sample_data
 cd madrigal
 ./add_all.sh
-cat <(echo "y") - | python manage.py rebuild_index
+echo y | python manage.py rebuild_index
 exec "$@"
