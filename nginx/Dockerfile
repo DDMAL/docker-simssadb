@@ -1,4 +1,8 @@
 FROM nginx:1.15.0-alpine
 
-RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/conf.d
+RUN set -e \
+  && apk add --update \
+    vim \
+    curl \
+  && rm /etc/nginx/conf.d/default.conf
+COPY ./simssadb.conf /etc/nginx/conf.d/simssadb.conf
