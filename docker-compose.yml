@@ -4,6 +4,7 @@ services:
     build:
       context: ./django
       dockerfile: Dockerfile
+    image: ddmal/simssadb_django:latest
     # command: bash -c "tail -f /dev/null"
     command: /machine/start
     env_file: ./misc/variables.txt
@@ -16,6 +17,7 @@ services:
     build:
       context: ./postgres
       dockerfile: Dockerfile
+    image: ddmal/simssadb_postgres:latest
     env_file: ./misc/variables.txt
     volumes:
       - postgres_data:/var/lib/postgresql/data/
@@ -25,6 +27,7 @@ services:
     build:
       context: ./nginx
       dockerfile: Dockerfile
+    image: ddmal/simssadb_nginx:latest
     volumes:
       - static_volume:/usr/src/app/static
     ports:
