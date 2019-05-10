@@ -1,7 +1,7 @@
 version: "3.2"
 services:
-  django: 
-    build: 
+  django:
+    build:
       context: ./django
       dockerfile: Dockerfile
     command: gunicorn simssadb.wsgi:application --bind 0.0.0.0:8000
