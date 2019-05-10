@@ -4,7 +4,8 @@ services:
     build:
       context: ./django
       dockerfile: Dockerfile
-    command: gunicorn simssadb.wsgi:application --bind 0.0.0.0:8000
+    # command: bash -c "tail -f /dev/null"
+    command: /machine/start
     env_file: ./misc/variables.txt
     depends_on:
       - postgres
