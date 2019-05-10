@@ -1,0 +1,40 @@
+version: "3.2"
+services:
+  django:
+    build:
+      context: ./django
+      dockerfile: Dockerfile
+    image: ddmal/simssadb_django:latest
+    command: bash -c "tail -f /dev/null"
+    env_file: ./misc/variables.txt
+    depends_on:
+      - postgres
+      - elasticsearch
+    volumes:
+      - "./django/simssadb:/code/simssadb"
+      - static_volume:/code/simssadb/static
+  postgres:
+    build:
+      context: ./postgres
+      dockerfile: Dockerfile
+    image: ddmal/simssadb_postgres:latest
+    env_file: ./misc/variables.txt
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+  elasticsearch:
+    image: "elasticsearch:5"
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    image: ddmal/simssadb_nginx:latest
+    volumes:
+      - static_volume:/usr/src/app/static
+    ports:
+      - "1337:80"
+    depends_on:
+      - django
+
+volumes:
+  postgres_data:
+  static_volume:
