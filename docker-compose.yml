@@ -5,7 +5,6 @@ services:
       context: ./django
       dockerfile: Dockerfile
     image: ddmal/simssadb_django:latest
-    # command: bash -c "tail -f /dev/null"
     command: /machine/start
     env_file: ./misc/variables.txt
     depends_on:

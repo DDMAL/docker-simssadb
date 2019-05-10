@@ -19,5 +19,3 @@ RUN set -e \
   && pip3 install -r /code/simssadb/requirements.txt
 
 WORKDIR /code/simssadb
-COPY scripts/entrypoint.sh /code/simssadb/entrypoint.sh
-ENTRYPOINT ["/code/simssadb/entrypoint.sh"]
