@@ -5,16 +5,16 @@ EXPOSE 8000
 # Update dependencies
 RUN apt-get update -y \
   # Making the image smaller
-  && rm -rf /var/lib/apt/lists/* 
-# Make a /code directory
-RUN mkdir /code
+  && rm -rf /var/lib/apt/lists/*
 
 # Copy our code from simssadb directory into the new code directory
 COPY simssadb /code/simssadb
-WORKDIR /code/simssadb
 
 
 # Install python dependencies with pip
-RUN pip3 install -r /code/simssadb/requirements.txt
+RUN set -e \
+  && pip3 install -r /code/simssadb/requirements.txt
 
-ENTRYPOINT ["/code/simssadb/entrypoint.sh"]COPY scripts/entrypoint.sh /code/simssadb/entrypoint.sh
+WORKDIR /code/simssadb
+COPY scripts/entrypoint.sh /code/simssadb/entrypoint.sh
+ENTRYPOINT ["/code/simssadb/entrypoint.sh"]
