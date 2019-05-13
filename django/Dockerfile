@@ -6,7 +6,9 @@ EXPOSE 8000
 RUN apt-get update -y \
   # Making the image smaller
   && rm -rf /var/lib/apt/lists/*
-
+# Install JAVA
+RUN apt-get upgrade -y
+RUN apt-get install default-jdk -y
 # Copy our code from simssadb directory into the new code directory
 COPY simssadb /code/simssadb
 
