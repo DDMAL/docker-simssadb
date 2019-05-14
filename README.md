@@ -13,7 +13,7 @@
   - You require the submodules: `git clone --recurse-submodules git@github.com:DDMAL/docker-simssadb.git`
   - Check if you have the latest branch in the `django/simssadb` folder execute `git pull origin develop`
     - If the latest has a different hash than the one referenced in this repository, make sure to commit the latest hash to this repository.
-  - execute the following command from the root of the repository: `docker-compose -f build.yml up`
+  - execute the following command from the root of the repository: `docker-compose -f build.yml up`. Alternatively, try running `sudo docker-compose -f build.yml up` if errors appear.
   - In another terminal window, execute:
 
   ```bash
