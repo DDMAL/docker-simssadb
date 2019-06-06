@@ -4,9 +4,13 @@ set -o nounset # Treat unset variables as an error when substituting.
 set -o xtrace # Print commands and their arguments as they are executed.
 
 # Setup the database
-python manage.py flush --no-input
 python manage.py makemigrations
 python manage.py migrate
+python manage.py makemigrations database
+python manage.py migrate database
+python manage.py makemigrations autocomplete
+python manage.py migrate autocomplete
+python manage.py flush --no-input
 python manage.py collectstatic --no-input
   # Adding Florence 164 to the database
 cd sample_data
