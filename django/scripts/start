@@ -8,11 +8,10 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py makemigrations database
 python manage.py migrate database
-python manage.py makemigrations autocomplete
-python manage.py migrate autocomplete
 python manage.py flush --no-input
 python manage.py collectstatic --no-input
-  # Adding Florence 164 to the database
+
+# Adding Florence 164 to the database
 cd sample_data
 cd Florence_164
 ./add_all.sh
