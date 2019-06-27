@@ -9,7 +9,6 @@ services:
     env_file: ./misc/variables.txt
     depends_on:
       - postgres
-      - elasticsearch
     volumes:
       - static_volume:/code/simssadb/static
   postgres:
@@ -20,8 +19,6 @@ services:
     env_file: ./misc/variables.txt
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-  elasticsearch:
-    image: "elasticsearch:5"
   nginx:
     build:
       context: ./nginx
