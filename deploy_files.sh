@@ -1,8 +1,8 @@
-sudo apt install unzip
-unzip simssadb_deployment_files.zip
-cp -r media/ django/simssadb/
-cp -r feature_extraction/ django/simssadb/
-cp -r sample_data/ django/simssadb/
-rm -rf media/
-rm -rf feature_extraction/
-rm -rf sample_data/
+cd django
+cd simssadb
+mkdir media
+mkdir media/symbolic_music
+mkdir media/user_files
+cp -r feature_extraction/jSymbolic_2_2_user/feature_definitions.xml media/
+cp -r feature_extraction/jSymbolic_2_2_user/jSymbolicDefaultConfigs.txt media/
+
