@@ -12,7 +12,7 @@ python manage.py flush --no-input
 python manage.py collectstatic --no-input
 
 # Adding Florence 164 to the database
-cd sample_data
+cd sample_data_for_SIMSSA_DB
 cd Florence_164
 ./add_all.sh
 cd ..
