@@ -1,0 +1,9 @@
+{
+	"name": "SIMSSADB",
+	"dockerComposeFile": [
+		"../docker-compose.yml",
+	],
+	"service": "django",
+	"workspaceFolder": "/code/simssadb",
+	"shutdownAction": "stopCompose",
+}
