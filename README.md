@@ -9,6 +9,7 @@
 
 - To View the site with no modifications
   - Execute from the root of the repository: `docker-compose up`
+  - Go to ``http://127.0.0.1:1337`` on your web browser
 - To work on the Django project,
   - You require the submodules: `git clone --recurse-submodules git@github.com:DDMAL/docker-simssadb.git`
   - Check if you have the latest branch in the `django/simssadb` folder execute `git pull origin develop`
