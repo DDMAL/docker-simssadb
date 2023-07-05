@@ -1,4 +1,4 @@
-FROM postgres:12
+FROM postgres:11.1
 EXPOSE 5432
 
 COPY ./maintenance /usr/local/bin/maintenance
