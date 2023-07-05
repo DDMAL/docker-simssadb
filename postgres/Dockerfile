@@ -1,4 +1,4 @@
-FROM postgres:11.1-alpine
+FROM postgres:11-stretch
 EXPOSE 5432
 
 COPY ./maintenance /usr/local/bin/maintenance
