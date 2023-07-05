@@ -1,4 +1,4 @@
-FROM postgres:11.1
+FROM postgres:11.1-alpine
 EXPOSE 5432
 
 RUN apt-get update 
