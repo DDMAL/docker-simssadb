@@ -1,4 +1,4 @@
-FROM nginx:1.15.0-alpine
+FROM nginx:1.25-alpine
 
 RUN set -e \
   && apk add --update \
@@ -6,3 +6,5 @@ RUN set -e \
     curl \
   && rm /etc/nginx/conf.d/default.conf
 COPY ./simssadb.conf /etc/nginx/conf.d/simssadb.conf
+
+EXPOSE 1337
