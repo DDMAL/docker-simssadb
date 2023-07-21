@@ -1,4 +1,4 @@
-FROM postgres:12-bullseye
+FROM postgres:15.3-bullseye
 EXPOSE 5432
 
 COPY ./maintenance /usr/local/bin/maintenance
