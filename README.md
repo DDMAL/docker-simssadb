@@ -19,8 +19,18 @@
 
   ```bash
   # This will give you a new shell
-  docker-compose exec django bash
+  docker compose exec django bash
 
   # In the new shell, type the following
   /machine/start
   ```
+**Note**: Make sure you have the correct image tags when pulling. Cross check with Docker Hub and edit the tags in `docker-compose.yml`.
+
+## Deployment
+To deploy changes made locally to production/staging:
+- Make sure Docker Hub built the images correctly: `ddmal/simssadb_django`, `ddmal/simssadb_postgres`, `ddmal/simssadb_nginx`
+- ssh into the staging or production server. Information on how to access them can be found on https://wiki.internal.simssa.ca
+- Find where the current `docker-simssadb` repo is. It's normally in `/srv/webapps/`
+- Make sure you have the correct docker image tags and run `sudo docker compose up`  
+  
+**Note**: Make sure to check for unused images, build caches, old volumes etc.
