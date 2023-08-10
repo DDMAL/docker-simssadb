@@ -2,7 +2,7 @@
 # The app is reading those with os.getenv()
 
 # Django settings
-SIMSSADB_HOSTS=['*']
+SIMSSADB_HOSTS='*'
 SIMSSADB_DEBUG=True
 SIMSSADB_SECRET_KEY=f1(1=m5ze=@ne023nnabwz(%x^j+8!y+py&n#lwvo0&(#c
 

@@ -1,3 +1,4 @@
 [submodule "django/simssadb"]
 	path = django/simssadb
 	url = git@github.com:ELVIS-Project/simssadb.git
+	branch = develop

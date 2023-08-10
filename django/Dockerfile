@@ -1,5 +1,5 @@
 # Get python image
-FROM python:3.7
+FROM python:3.8.17
 EXPOSE 8000
 
 # Update dependencies
