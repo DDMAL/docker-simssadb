@@ -8,7 +8,8 @@ services:
     command: /machine/start
     env_file: ./misc/variables.txt
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     volumes:
       - static_volume:/code/simssadb/static
   postgres:
@@ -19,6 +20,12 @@ services:
     env_file: ./misc/variables.txt
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
   nginx:
     build:
       context: ./nginx
