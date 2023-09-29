@@ -1,5 +1,7 @@
 # docker-simssadb
 Docker wrapper for [ELVIS-Project/simssadb](https://github.com/ELVIS-Project/simssadb).
+Production: https://db.simssa.ca
+Staging: https://db.staging.simssa.ca (need to be on McGill network/VPN)
 ## Installation
 - First you must install docker
   - For Mac
